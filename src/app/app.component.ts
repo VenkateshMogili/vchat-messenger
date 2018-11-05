@@ -1,20 +1,42 @@
-import { Component,OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  title = 'app';
-  checked: boolean = false;
-	night: boolean = false;
-  constructor() { }
-
+ 
+  title = 'app works!';
+  
+  targetpeer: any;
+  peer: any;
+  
   ngOnInit() {
-  console.log(this.checked);
+ 
+    this.peer = new SimplePeer ({
+      initiator: location.hash === '#init',
+      trickle: false
+    })
+    
+    this.peer.on('signal', function(data) {
+      console.log(JSON.stringify(data));
+      
+      this.targetpeer = data;
+    })
+    
+    this.peer.on('data', function(data) {
+      console.log('Recieved message:' + data);
+    })
+    
   }
-  change_mode(mode){
-  this.night=mode;
-  console.log(mode);
+  
+  connect() {
+    this.peer.signal(JSON.parse(this.targetpeer));
   }
+  
+  message() {
+    this.peer.send(this.targetpeer);
+  }
+  
 }

@@ -1,7 +1,10 @@
-<div [ngClass]="{'night_mode':night===true, 'normal_mode':night===false}">
+<input type="text" [(ngModel)]="targetpeer">
+<button (click)="connect()">Connect</button>
+<button (click)="message()">Send Message</button>
+<!-- <div [ngClass]="{'night_mode':night===true, 'normal_mode':night===false}">
 <router-outlet></router-outlet>
 </div>
   <div class="developers">
   VChat &nbsp;&nbsp;Made in INDIA
   <mat-slide-toggle style="float:right" checked="{{checked}}" (change)="change_mode($event['checked'])">Night Mode</mat-slide-toggle>
-</div>
+</div> -->
