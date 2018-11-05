@@ -2,7 +2,13 @@
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
 @import url('https://fonts.googleapis.com/css?family=Poiret+One');
 body{
+  margin:0px;
+	height:100%;
 	font-family: 'Poiret One', cursive;
+  transition:0.9s;
+}
+*{
+	box-sizing: border-box;
 }
 .example-container {
   width: 500px;

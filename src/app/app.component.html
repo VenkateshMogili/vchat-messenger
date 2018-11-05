@@ -1,16 +1,7 @@
-<mat-drawer-container class="example-container" autosize>
-  <mat-drawer #drawer class="example-sidenav" mode="side">
-  <button mat-raised-button color="default">Menu-1</button>
-  <button mat-raised-button color="default">Menu-2</button>
-  <button mat-raised-button color="default">Menu-3</button>
-  <button mat-raised-button color="default">Login</button>
-  <button mat-raised-button color="default">Signup</button>
-  </mat-drawer>
-
-  <div class="example-sidenav-content">
-    <button type="button" mat-button (click)="drawer.toggle()">
-     Menu
-    </button>
-  </div>
-
-</mat-drawer-container>
+<div [ngClass]="{'night_mode':night===true, 'normal_mode':night===false}">
+<router-outlet></router-outlet>
+</div>
+  <div class="developers">
+  VChat &nbsp;&nbsp;Made in INDIA
+  <mat-slide-toggle style="float:right" checked="{{checked}}" (change)="change_mode($event['checked'])">Night Mode</mat-slide-toggle>
+</div>

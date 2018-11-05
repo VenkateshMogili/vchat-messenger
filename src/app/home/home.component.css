@@ -1,0 +1,28 @@
+.app_name{
+	color: #f9f6f7;
+    text-shadow: 1px 2px 3px cadetblue;
+    padding: 10px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+.chats_user_logo{
+	width:50px;
+	height:50px;
+	border-radius:100px;
+	float:left;
+}
+.timing{
+	float:right;
+	font-weight:normal;
+}
+.chat_item{
+	margin:10px;
+}
+.username, .message{
+	margin-left:10px;
+}
+.message{
+	font-weight:normal;
+}

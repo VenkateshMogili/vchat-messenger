@@ -1,0 +1,51 @@
+<div class="bg-text">
+  <mat-tab-group color="primary" backgroundColor="primary" mat-align-tabs="center" mat-swipe-content="true">
+  <mat-tab label="Chats" style="color:white">
+    <mat-content>
+  <div style="height:490px;overflow: auto;">
+  <div class="chat_item" *ngFor="let chat of chats">
+  <img src="assets/usericon.png" class="chats_user_logo"/>
+  <span class="username"><b>{{chat.username}}</b></span>
+  <br/>
+  <span class="message">{{chat.name}}</span>
+  <small class="timing">2:08 pm</small>
+  <hr/>
+  </div>
+
+  </div>
+</mat-content>
+  </mat-tab>
+  <mat-tab label="Status"> 
+     <mat-content>
+  <div style="height:490px;overflow: auto;">
+  <div class="chat_item" *ngFor="let chat of chats">
+  <img src="assets/usericon.png" class="chats_user_logo"/>
+  <span class="username"><b>{{chat.username}}</b></span>
+  <br/>
+  <span class="message">{{chat.name}}</span>
+  <small class="timing">2:08 pm</small>
+  <hr/>
+  </div>
+
+  </div>
+</mat-content>
+  </mat-tab>
+  <mat-tab label="Friends"> 
+     <mat-content>
+  <div style="height:490px;overflow: auto;">
+  <div class="chat_item" *ngFor="let chat of chats">
+  <img src="assets/usericon.png" class="chats_user_logo"/>
+  <span class="username"><b>{{chat.username}}</b></span>
+  <br/>
+  <span class="message">{{chat.name}}</span>
+  <small class="timing">2:08 pm</small>
+  <hr/>
+  </div>
+
+  </div>
+</mat-content>
+  </mat-tab>
+</mat-tab-group>
+</div>
+
+<!-- <app-footer></app-footer> -->
