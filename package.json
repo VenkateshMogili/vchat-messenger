@@ -30,6 +30,7 @@
     "firebase": "^5.5.7",
     "firebase-tools": "^6.0.1",
     "hammerjs": "^2.0.8",
+    "ngx-toastr": "^9.1.1",
     "rxjs": "^6.3.3",
     "vjs-video": "^0.1.11",
     "zone.js": "^0.8.26"

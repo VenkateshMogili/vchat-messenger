@@ -1,6 +1,12 @@
-<input type="text" [(ngModel)]="targetpeer">
-<button (click)="connect()">Connect</button>
-<button (click)="message()">Send Message</button>
+<div class="example-container">
+<app-users></app-users>
+</div>
+<!--ID: <input type="text" [(ngModel)]="search_peer" name="search_peer">-->
+<!--<button (click)="connect()">Connect</button>-->
+<!--<button (click)="message()">Send Message</button>-->
+<!--<div *ngFor="let chat of model_array">-->
+<!--{{chat}}-->
+<!--</div>-->
 <!-- <div [ngClass]="{'night_mode':night===true, 'normal_mode':night===false}">
 <router-outlet></router-outlet>
 </div>
@@ -8,3 +14,4 @@
   VChat &nbsp;&nbsp;Made in INDIA
   <mat-slide-toggle style="float:right" checked="{{checked}}" (change)="change_mode($event['checked'])">Night Mode</mat-slide-toggle>
 </div> -->
+
