@@ -2,11 +2,13 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
 import { AppComponent } from './app.component';
-import {MatSidenavModule,
-MatTabsModule,
-MatButtonModule,
-MatSlideToggleModule,
-MatFormFieldModule} from '@angular/material';
+import {
+  MatSidenavModule,
+  MatTabsModule,
+  MatButtonModule,
+  MatSlideToggleModule,
+  MatFormFieldModule, MatInputModule
+} from '@angular/material';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { FooterComponent } from './footer/footer.component';
 import { HomeComponent } from './home/home.component';
@@ -40,6 +42,7 @@ import {ToastrModule} from 'ngx-toastr';
     MatButtonModule,
     MatSlideToggleModule,
     MatFormFieldModule,
+    MatInputModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
     ToastrModule.forRoot(),

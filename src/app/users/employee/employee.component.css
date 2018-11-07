@@ -5,3 +5,6 @@ input.ng-invalid.ng-dirty {
 button:hover, a.btn:hover{
   cursor:pointer;
 }
+.full-width{
+  width:100%;
+}

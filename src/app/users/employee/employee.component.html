@@ -1,26 +1,29 @@
 <form #employeeForm="ngForm" (ngSubmit)="onSubmit(employeeForm)">
-  <div>
-    <label>Name</label>
-    <input name="name" #name="ngModel" [(ngModel)]="employeeService.name" placeholder="Full Name" required/>
+  <input type="hidden" name="$key" #$key="ngModel" [(ngModel)]="employeeService.selectedEmployee.$key">
+  <div class="form-group full-width">
+    <label>Name: </label>
+    <input name="name" class="form-control" #name="ngModel" [(ngModel)]="employeeService.selectedEmployee.name" placeholder="Full Name" required/>
+  </div>
+  <div class="form-group full-width">
+    <input name="position" class="form-control" #position="ngModel" [(ngModel)]="employeeService.selectedEmployee.position" placeholder="Position" required/>
   </div>
 
-  <div>
-    <label>Position</label>
-    <input name="position" #position="ngModel" [(ngModel)]="employeeService.position" placeholder="Position" required/>
+  <div class="form-group full-width">
+    <input name="office" class="form-control" #office="ngModel" [(ngModel)]="employeeService.selectedEmployee.office" placeholder="Office" required/>
   </div>
 
-  <div>
-    <label>Office</label>
-    <input name="office" #office="ngModel" [(ngModel)]="employeeService.office" placeholder="Office" required/>
-  </div>
-
-  <div>
+  <div class="form-group">
     <label>Salary</label>
-    <input type="number" name="salary" #salary="ngModel" [(ngModel)]="employeeService.salary" placeholder="Salary" required/>
+    <div class="input-group">
+      <div class="input-group-addon">
+        <i class="fas fa-dollar-sign"></i>
+      </div>
+      <input type="number" class="form-control" name="salary" #salary="ngModel" [(ngModel)]="employeeService.selectedEmployee.salary" placeholder="Salary" required/>
+    </div>
   </div>
-
-  <div>
-<button type="submit" [disabled]="!employeeForm.valid">Submit</button>
-    <button type="reset" (click)="resetForm(employeeForm)">Reset</button>
+  <div class="form-group">
+    <button mat-raised-button color="primary" type="submit" [disabled]="!employeeForm.valid">Submit</button>
+    &nbsp;&nbsp;
+    <button mat-raised-button color="warn" type="reset" (click)="resetForm(employeeForm)">Reset</button>
   </div>
 </form>

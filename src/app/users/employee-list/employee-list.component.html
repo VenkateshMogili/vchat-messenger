@@ -1,9 +1,20 @@
-<h6>Employee Register</h6>
-<table class="mat-table">
+<h6 class="text-center">Total Employees</h6>
+<table class="table table-sm-table-hover">
+  <tr *ngIf="employeeList.length==0">
+    <td class="text-center" colspan="3"> No Data.</td>
+  </tr>
   <tr *ngFor="let employee of employeeList">
     <td>{{employee.name}}</td>
     <td>{{employee.position}}</td>
-    <td>{{employee.office}}</td>
-    <td>{{employee.salary}}</td>
+    <td>
+      <a class="btn" (click)="onEdit(employee)">
+        <i class="fas fa-pencil-alt"></i>
+      </a>
+    </td>
+    <td>
+      <a class="btn" (click)="onDelete(employee.$key)">
+        <i class="fas fa-trash"></i>
+      </a>
+    </td>
   </tr>
 </table>

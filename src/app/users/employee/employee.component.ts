@@ -9,7 +9,6 @@ import {ToastrService} from 'ngx-toastr';
   styleUrls: ['./employee.component.css']
 })
 export class EmployeeComponent implements OnInit {
-
   constructor(private employeeService: EmployeeService, private tostr: ToastrService) { }
 
   ngOnInit() {
@@ -17,9 +16,14 @@ export class EmployeeComponent implements OnInit {
     this.resetForm();
   }
   onSubmit(employeeForm: NgForm) {
-    this.employeeService.insertEmployee(employeeForm.value);
-    this.resetForm(employeeForm);
-    this.tostr.success('Submitted successfully', 'Employee Registered');
+    if (employeeForm.value.$key == null) {
+      this.employeeService.insertEmployee(employeeForm.value);
+      this.resetForm(employeeForm);
+      this.tostr.success('Registered successfully', 'Employee Registered');
+    } else {
+      this.employeeService.updateEmployee(employeeForm.value);
+      this.tostr.info('Updated successfully', 'Employee Registered');
+    }
   }
 
   resetForm(employeeForm?: NgForm) {
